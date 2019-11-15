@@ -22,10 +22,10 @@ while 1
         turn90(brick, 1);
         drive(brick, 4000, 1);
     elseif brick.UltrasonicDist(2) > 20
-        turn(brick, 100);
+        turn(brick, 150);
         drive(brick, 1000, 1);
     elseif brick.UltrasonicDist(2) < 10
-        turn(brick, -100);
+        turn(brick, -150);
         drive(brick, 1000, 1);
     elseif brick.ColorCode(1) == 5
         brick.StopMotor('B');
@@ -37,5 +37,4 @@ while 1
     end
     
     pause(0.1);
-    disp(brick.UltrasonicDist(2));
 end

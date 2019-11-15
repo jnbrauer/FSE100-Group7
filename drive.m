@@ -13,7 +13,6 @@ function drive(brick, dist, wait)
             end
             pause(0.1);
         end
-        disp("Finished driving");
         brick.StopMotor('B');
     end
 end
