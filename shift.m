@@ -1,6 +1,6 @@
 % 1: straight, -1: turning
 function shift(brick, to, from)
-    brick.StopAllMotors();
+    %brick.StopAllMotors();
     if to ~= from
         brick.MoveMotor('C', -50*to);
         pause(0.3);

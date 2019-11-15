@@ -11,7 +11,7 @@ shiftState = 1;
 
 while 1
     if brick.TouchPressed(3) ||  brick.TouchPressed(4)
-        brick.StopAllMotors();
+        brick.StopMotor('B');
         drive(brick, 100, 0);
         pause(0.5);
         drive(brick, -1500, 1);
@@ -22,10 +22,14 @@ while 1
         turn90(brick, 1);
         drive(brick, 4000, 1);
     elseif brick.UltrasonicDist(2) > 20
-        turn(brick, 150);
+        turn(brick, 100);
         drive(brick, 1000, 1);
     elseif brick.UltrasonicDist(2) < 10
-        turn(brick, -150);
+        turn(brick, -100);
+        drive(brick, 1000, 1);
+    elseif brick.ColorCode(1) == 5
+        brick.StopMotor('B');
+        pause(2.0);
         drive(brick, 1000, 1);
     else
         shift(brick, 1, -1);
