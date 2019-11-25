@@ -9,8 +9,7 @@ InitKeyboard();
 
 brick.SetColorMode(1, 2);
 
-shift(brick, 1, -1);
-shiftState = 1;
+shift(brick, 1);
 
 while 1
     pause(0.1);
@@ -27,8 +26,7 @@ while 1
         
         case 'uparrow'
             % Drive forwards
-            shift(brick, 1, shiftState);
-            shiftState = 1;
+            shift(brick, 1);
             if ~brick.TouchPressed(3) &&  ~brick.TouchPressed(4) && ~(brick.ColorCode(1) == 5)
                 brick.MoveMotor('B', 100);
             else
@@ -38,22 +36,19 @@ while 1
             
         case 'downarrow'
             % Drive Backwards
-            shift(brick, 1, shiftState);
-            shiftState = 1;
+            shift(brick, 1);
             brick.MoveMotor('B', -100);
             disp('Down Arrow Pressed!');
             
         case 'leftarrow'
             % Turn left
-            shift(brick, -1, shiftState);
-            shiftState = -1;
+            shift(brick, -1);
             brick.MoveMotor('B', -100);
             disp('Left Arrow Pressed!');
             
         case 'rightarrow'
             % Turn right
-            shift(brick, -1, shiftState);
-            shiftState = -1;
+            shift(brick, -1);
             brick.MoveMotor('B', 100);
             disp('Right Arrow Pressed!');
             

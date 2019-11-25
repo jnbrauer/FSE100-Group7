@@ -1,5 +1,6 @@
 function drive(brick, dist, wait)
-    shift(brick, 1, -1);
+    shift(brick, 1);
+    brick.StopMotor('B');
     brick.ResetMotorAngle('B');
     brick.MoveMotorAngleRel('B', 100, dist, 'Brake');
     if wait
