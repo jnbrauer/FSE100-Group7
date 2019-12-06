@@ -1,4 +1,4 @@
-function pickupWheechair(brick) 
+function pickupWheelchair(brick) 
     shift(brick, 1);
     while brick.ColorCode(1) ~= 6
         brick.MoveMotor('B', 50);
